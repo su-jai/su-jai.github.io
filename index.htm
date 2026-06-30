@@ -1,25 +1,200 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>sumer</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sumer Jaitly</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
 <style>
-img {
-	width: 35%;
-}
+  :root {
+    --text: #1a1a1a;
+    --muted: #6b6b6b;
+    --link: #2a6dbf;
+    --bg: #ffffff;
+  }
+
+  html { -webkit-text-size-adjust: 100%; font-size: 115%; }
+
+  body {
+    font-family: "STIX Two Text", Georgia, serif;
+    color: var(--text);
+    background: var(--bg);
+    line-height: 1.7;
+    font-size: 1.25rem;
+    max-width: 42rem;
+    margin: 0 auto;
+    padding: 5rem 1.5rem 6rem;
+  }
+
+  h1 {
+    font-size: 2rem;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    margin: 0 0 0.25rem;
+  }
+
+  .role {
+    color: var(--muted);
+    font-style: italic;
+    font-size: 1.1rem;
+    margin: 0 0 2.5rem;
+  }
+
+  p { margin: 0 0 1.1rem; }
+
+  details { margin: 2.5rem 0 0; }
+
+  summary {
+    font-size: 0.95rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    color: var(--muted);
+    cursor: pointer;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin: 0 0 1.2rem;
+  }
+
+  summary::-webkit-details-marker { display: none; }
+
+  summary::before {
+    content: "";
+    width: 0;
+    height: 0;
+    border-left: 5px solid currentColor;
+    border-top: 4px solid transparent;
+    border-bottom: 4px solid transparent;
+    transition: transform 0.15s ease;
+  }
+
+  details[open] summary::before { transform: rotate(90deg); }
+
+  details:not([open]) summary { margin-bottom: 0; }
+
+  details:not([open]) + details { margin-top: 1rem; }
+
+  summary:hover { color: var(--text); }
+
+  .timeline {
+    display: grid;
+    grid-template-columns: 5.5rem 1fr;
+    row-gap: 1rem;
+    column-gap: 1.25rem;
+    font-size: 1.05rem;
+  }
+
+  .timeline .year {
+    color: var(--muted);
+    font-style: italic;
+    white-space: nowrap;
+  }
+
+  .timeline .what { margin: 0; }
+
+  .timeline .place { color: var(--muted); }
+
+  .timeline .note {
+    color: var(--muted);
+    font-size: 0.95rem;
+    font-style: italic;
+  }
+
+  .links { margin-top: 1.4rem; }
+
+  figure {
+    margin: 4rem 0 0;
+  }
+
+  figure img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 6px;
+  }
+
+  figcaption {
+    color: var(--muted);
+    font-style: italic;
+    font-size: 0.95rem;
+    margin-top: 0.6rem;
+  }
+
+  a {
+    color: var(--link);
+    text-decoration: none;
+    border-bottom: 1px solid rgba(42, 109, 191, 0.25);
+    transition: border-color 0.15s ease;
+  }
+  a:hover { border-bottom-color: var(--link); }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --text: #e8e8e8;
+      --muted: #9a9a9a;
+      --link: #6ea8e6;
+      --bg: #161616;
+    }
+  }
 </style>
 </head>
 <body>
 
-<h1>Sumer Jaitly</h1>
-<p>Postdoc in the high energy theory group at Scuola Normale Superiore, Pisa.</p>
+  <h1>Sumer Jaitly</h1>
+  <p class="role">Postdoc, High Energy Theory Group · Scuola Normale Superiore, Pisa</p>
 
-<p>You can contact me at <a href="mailto:sumer.jaitly@sns.it">sumer.jaitly@sns.it</a>.</p>
+  <p>
+    I am a theoretical physicist in the high energy theory group at Scuola
+    Normale Superiore in Pisa working on twistor methods for cosmological correlators.
+  </p>
 
-<h2>Papers</h2>
+  <p class="links">
+    <a href="https://inspirehep.net/authors/1755025?ui-citation-summary=true">INSPIRE-HEP</a> ·
+    <a href="https://github.com/su-jai">GitHub</a> ·
+    <a href="https://www.linkedin.com/in/sumerjaitly/">LinkedIn</a> ·
+    <a href="cv.pdf">CV</a> ·
+    <a href="mailto:sumer.jaitly@sns.it">Email</a>
+  </p>
 
-<p>My page on <a href="https://inspirehep.net/authors/1755025?ui-citation-summary=true">inspire HEP</a>.</p>
+  <details open>
+    <summary>Employment History</summary>
+    <div class="timeline">
+      <div class="year">2024&ndash;26</div>
+      <p class="what">Postdoctoral Fellow, High-Energy Physics Group<br>
+        <span class="place">Scuola Normale Superiore, Pisa</span></p>
 
+      <div class="year">2023&ndash;24</div>
+      <p class="what">Research Associate, Theoretical Physics Group<br>
+        <span class="place">Imperial College London</span></p>
+    </div>
+  </details>
 
+  <details open>
+    <summary>Education</summary>
+    <div class="timeline">
+      <div class="year">2023</div>
+      <p class="what">PhD, Theoretical Physics<br>
+        <span class="place">Imperial College London</span></p>
+
+      <div class="year">2019</div>
+      <p class="what">MSc, Quantum Fields and Fundamental Forces<br>
+        <span class="place">Imperial College London</span><br>
+        <span class="note">Distinction · Abdus Salam Prize (highest rank in year)</span></p>
+
+      <div class="year">2017</div>
+      <p class="what">BSc, Physics with Theoretical Physics<br>
+        <span class="place">Imperial College London</span><br>
+        <span class="note">First class · President&rsquo;s Undergraduate Scholarship</span></p>
+    </div>
+  </details>
+
+  <figure>
+    <img src="astrid.jpg" alt="An orange paper lamp on a windowsill in front of a chalkboard, lit by a diagonal shaft of sunlight">
+  </figure>
 
 </body>
 </html>

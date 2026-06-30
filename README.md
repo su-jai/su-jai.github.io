@@ -1,1 +1,1 @@
-# su-jai.github.io
+# Basic personal website, built using the help of Claude.
