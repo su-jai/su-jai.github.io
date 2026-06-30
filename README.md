@@ -1,1 +1,1 @@
-# Basic personal website, built using the help of Claude.
+# Basic personal website.
